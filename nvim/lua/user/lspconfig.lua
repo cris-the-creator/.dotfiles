@@ -72,7 +72,6 @@ function M.config()
     "tsserver",
     "eslint",
     "tsserver",
-    "pyright",
     "bashls",
     "jsonls",
     "yamlls",

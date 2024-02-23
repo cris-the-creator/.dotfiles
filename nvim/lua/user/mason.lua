@@ -12,7 +12,6 @@ function M.config()
     "cssls",
     "html",
     "tsserver",
-    "pyright",
     "bashls",
     "jsonls",
   }

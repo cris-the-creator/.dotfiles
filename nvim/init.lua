@@ -30,4 +30,6 @@ spec "user.project"
 spec "user.indentline"
 spec "user.toggleterm"
 spec "user.extras.copilot"
+
 require "user.lazy"
+

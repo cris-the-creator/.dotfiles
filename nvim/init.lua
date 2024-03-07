@@ -2,7 +2,7 @@ require "user.launch"
 require "user.options"
 require "user.keymaps"
 require "user.autocmds"
- 
+
 spec "user.lush"
 spec "user.colorscheme"
 spec "user.devicons"
@@ -21,15 +21,15 @@ spec "user.comment"
 spec "user.lualine"
 spec "user.navic"
 spec "user.breadcrumbs"
-spec "user.harpoon"
 spec "user.neotest"
 spec "user.autopairs"
-spec "user.neogit"
 spec "user.alpha"
 spec "user.project"
 spec "user.indentline"
 spec "user.toggleterm"
 spec "user.extras.copilot"
+
+spec "user.plugins.harpoon"
 
 require "user.lazy"
 

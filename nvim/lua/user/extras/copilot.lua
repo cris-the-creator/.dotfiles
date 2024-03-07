@@ -9,10 +9,10 @@ function M.config()
   require("copilot").setup {
     panel = {
       keymap = {
-        jump_next = "<c-j>",
-        jump_prev = "<c-k>",
-        accept = "<c-l>",
-        refresh = "r",
+        jump_next = "<C-j>",
+        jump_prev = "<C-k>",
+        accept = "<C-l>",
+        refresh = "<C-r>",
         open = "<M-CR>",
       },
     },
@@ -20,10 +20,10 @@ function M.config()
       enabled = true,
       auto_trigger = true,
       keymap = {
-        accept = "<c-l>",
-        next = "<c-j>",
-        prev = "<c-k>",
-        dismiss = "<c-h>",
+        accept = "<C-l>",
+        next = "<C-j>",
+        prev = "<C-k>",
+        dismiss = "<C-h>",
       },
     },
     filetypes = {

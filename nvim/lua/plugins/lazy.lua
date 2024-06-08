@@ -158,34 +158,20 @@ require('lazy').setup({
       })
     end
   },
-  'ray-x/go.nvim',
-  'ray-x/guihua.lua',
   {
-    "catppuccin/nvim",
-    as = "catppuccin",
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
     config = function()
-      require("catppuccin").setup({
-        no_italic = false,
-        no_bold = false,
-        no_underline = true,
-        transparent_background = true,
-        styles = {
-          comments = { "italic" },
-          conditionals = { "italic" },
-          loops = {},
-          functions = {},
-          keywords = {},
-          strings = {},
-          variables = {},
-          numbers = {},
-          booleans = {},
-          properties = {},
-          types = {},
-          operators = {},
-        },
+      require("tokyonight").setup({
+        transparent = true,
+        style = "night",
       })
     end
   },
+  'ray-x/go.nvim',
+  'ray-x/guihua.lua',
   {
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
@@ -240,5 +226,16 @@ require('lazy').setup({
     opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
+    'arnarg/todotxt.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+    },
+    config = function()
+      require('todotxt-nvim').setup({
+        todo_file = '/home/cris/.todo.txt',
+      })
+    end
   }
 })

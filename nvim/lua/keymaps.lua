@@ -1,5 +1,6 @@
--- twilight
+-- twilight & zen
 vim.api.nvim_set_keymap("n", "tw", ":Twilight<enter>", { noremap = false })
+vim.api.nvim_set_keymap("n", "zm", ":ZenMode<enter>", { noremap = false })
 -- buffers
 vim.api.nvim_set_keymap("n", "tk", ":blast<enter>", { noremap = false })
 vim.api.nvim_set_keymap("n", "tj", ":bfirst<enter>", { noremap = false })
@@ -19,22 +20,22 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
 -- Noice
 vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
-
 -- Oil
 vim.keymap.set("n", "<space><space>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 -- Codeium
 vim.keymap.set('i', '<C-e>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-vim.keymap.set('i', '<c-j>', function() return vim.fn['codeium#CycleCompletions'](1) end,
-  { expr = true, silent = true })
-vim.keymap.set('i', '<c-k>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
-  { expr = true, silent = true })
+vim.keymap.set('i', '<c-j>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+vim.keymap.set('i', '<c-k>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
 vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
 -- Flash
 vim.keymap.set("n", "s", function() require("flash").jump() end, { silent = true, noremap = true })
--- Misc
+-- Obsidian
+vim.keymap.set('n', '<C-o>', '<cmd>:ObsidianWorkspace<CR>', {desc = 'Switch Obsidian Workspace'})
+vim.keymap.set('n', '<leader>os', '<cmd>:ObsidianSearch<CR>', {desc = 'Switch Obsidian Workspace'})
+vim.keymap.set('n', '<leader>on', '<cmd>:ObsidianNew<CR>', {desc = 'Switch Obsidian Workspace'})
+-- misc
 vim.keymap.set("n", "<leader>ee", "<cmd>GoIfErr<cr>", { silent = true, noremap = true })
 vim.keymap.set('n', '<Esc>', "<cmd>set nohlsearch<CR>")
-vim.keymap.set('n', '<leader>f', "<cmd>Format<CR>")
+vim.api.nvim_set_keymap('n', '<C-f>', "<cmd>Format<CR>", { noremap = false })

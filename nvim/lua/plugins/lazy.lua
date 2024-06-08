@@ -30,18 +30,7 @@ require('lazy').setup({
     },
     config = true
   },
-  {
-    'Exafunction/codeium.vim',
-    config = function()
-      -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set('i', '<C-e>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-j>', function() return vim.fn['codeium#CycleCompletions'](1) end,
-        { expr = true, silent = true })
-      vim.keymap.set('i', '<c-k>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
-        { expr = true, silent = true })
-      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-    end
-  },
+  'Exafunction/codeium.vim',
   'onsails/lspkind.nvim',
   {
     "iamcco/markdown-preview.nvim",
@@ -65,9 +54,6 @@ require('lazy').setup({
   },
   'folke/zen-mode.nvim',
   'tpope/vim-obsession',
-  -- Tree
-  --TODO: add oil here
-
   -- Database
   'kristijanhusak/vim-dadbod-ui',
   'kristijanhusak/vim-dadbod-completion',
@@ -130,11 +116,7 @@ require('lazy').setup({
     "folke/trouble.nvim",
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
-      require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("trouble").setup {}
     end
   },
   {
@@ -146,6 +128,28 @@ require('lazy').setup({
     end
   },
   {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {},
+    -- stylua: ignore
+    keys = {
+      { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+      { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+      { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+    },
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {},
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
+  {
     "rcarriga/nvim-notify",
     config = function()
       require("notify").setup({
@@ -153,37 +157,6 @@ require('lazy').setup({
         enabled = false,
       })
     end
-  },
-  {
-    "folke/noice.nvim",
-    config = function()
-      require("noice").setup({
-        -- add any options here
-        routes = {
-          {
-            filter = {
-              event = 'msg_show',
-              any = {
-                { find = '%d+L, %d+B' },
-                { find = '; after #%d+' },
-                { find = '; before #%d+' },
-                { find = '%d fewer lines' },
-                { find = '%d more lines' },
-              },
-            },
-            opts = { skip = true },
-          }
-        },
-      })
-    end,
-    dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-      "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
-    }
   },
   'ray-x/go.nvim',
   'ray-x/guihua.lua',

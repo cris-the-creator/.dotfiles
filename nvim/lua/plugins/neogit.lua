@@ -2,7 +2,7 @@
 -- like fetching branches with telescope or blaming with fugitive
 local neogit = require('neogit')
 
-vim.keymap.set("n", "<leader>gs", neogit.open,
+vim.keymap.set("n", "<leader>gg", neogit.open,
   {silent = true, noremap = true}
 )
 

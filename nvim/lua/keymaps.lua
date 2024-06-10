@@ -24,21 +24,19 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
 -- Oil
 vim.keymap.set("n", "<leader><leader>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
--- Codeium
-vim.keymap.set('i', '<C-e>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-vim.keymap.set('i', '<c-j>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-vim.keymap.set('i', '<c-k>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
 -- Flash
 vim.keymap.set("n", "s", function() require("flash").jump() end, { silent = true, noremap = true })
 -- Obsidian
 vim.keymap.set('n', '<leader>ow', '<cmd>:ObsidianWorkspace<CR>', {desc = 'Switch Obsidian Workspace'})
 vim.keymap.set('n', '<leader>os', '<cmd>:ObsidianSearch<CR>', {desc = 'Switch Obsidian Workspace'})
 vim.keymap.set('n', '<leader>on', '<cmd>:ObsidianNew<CR>', {desc = 'Switch Obsidian Workspace'})
--- Todo
+-- TodoTxt
 vim.keymap.set('n', '<leader>tt', '<cmd>:ToDoTxtTasksToggle<CR>', {desc = 'Toggle Todo List'})
 vim.keymap.set('n', '<leader>tn', '<cmd>:ToDoTxtCapture<CR>', {desc = 'New Todo'})
+-- TodoComments
+vim.keymap.set('n', '<leader>td', '<cmd>:TodoLocList<CR>', {desc = 'Show Todo List'})
 -- misc
 vim.keymap.set("n", "<leader>ee", "<cmd>GoIfErr<cr>", { silent = true, noremap = true })
 vim.keymap.set('n', '<Esc>', "<cmd>set nohlsearch<CR>")
 vim.api.nvim_set_keymap('n', '<C-f>', "<cmd>Format<CR>", { noremap = false })
+vim.api.nvim_set_keymap('n', '<C-b>', "<cmd>e#<CR>", { noremap = false })

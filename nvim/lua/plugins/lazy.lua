@@ -30,7 +30,6 @@ require('lazy').setup({
     },
     config = true
   },
-  'Exafunction/codeium.vim',
   'onsails/lspkind.nvim',
   {
     "iamcco/markdown-preview.nvim",
@@ -237,5 +236,12 @@ require('lazy').setup({
         todo_file = '/home/cris/.todo.txt',
       })
     end
+  },
+  {
+    "olexsmir/gopher.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
   }
 })

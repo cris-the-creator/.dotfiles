@@ -5,6 +5,8 @@ vim.o.hlsearch = true
 vim.wo.number = true
 vim.o.relativenumber = true
 
+vim.opt.tabstop = 2
+
 -- Disable mouse mode
 vim.o.mouse = 'a'
 

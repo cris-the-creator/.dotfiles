@@ -103,7 +103,26 @@ require('lspconfig').lua_ls.setup {
     },
   },
 }
---
+
+require('lspconfig').intelephense.setup {
+on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    intelephense = {
+      files = {
+        maxSize = 1000000
+      },
+      environment = {
+        includePaths = {
+          '/home/cris/dev/local/repos/dev',
+          '/home/cris/dev/local/repos/framework',
+          '/home/cris/dev/local/repos/hub',
+        }
+      }
+    }
+  }
+}
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'

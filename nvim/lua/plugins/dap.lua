@@ -18,7 +18,7 @@ local dap = require('dap')
 dap.adapters.php = {
   type = 'executable',
   command = 'node',
-  args = {'/opt/vscode-php-debug/out/phpDebug.js'}
+  args = { os.getenv('HOME') .. '/vscode-php-debug/out/phpDebug.js' }
 }
 
 dap.configurations.php = {
@@ -26,9 +26,17 @@ dap.configurations.php = {
     type = 'php',
     requrest = 'launch',
     name = 'Listen for xdebug',
-    port = '9003',
+    port = 9003,
     log = false,
-    --localSourceRoot = '/home/cris/dev/',
-    --serverSourceRoot = '/public/'
+  },
+  {
+    type = 'php',
+    requrest = 'launch',
+    name = 'Listen for xdebug docker',
+    port = 9003,
+    log = false,
+    pathMappings = {
+      ['/var/www/html'] = "${workspaceFolder}"
+    }
   }
 }

@@ -243,5 +243,27 @@ require('lazy').setup({
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
-  }
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "olimorris/neotest-phpunit"
+    },
+    config = function()
+      require('neotest').setup({
+        adapters = {
+          require('neotest-phpunit')({
+            phpunit_cmd = 'vendor/bin/phpunit',
+          })
+        },
+        diagnostic = {
+          enabled = true
+        }
+      })
+    end
+  },
 })

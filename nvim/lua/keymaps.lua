@@ -35,6 +35,12 @@ vim.keymap.set('n', '<leader>tt', '<cmd>:ToDoTxtTasksToggle<CR>', {desc = 'Toggl
 vim.keymap.set('n', '<leader>tn', '<cmd>:ToDoTxtCapture<CR>', {desc = 'New Todo'})
 -- TodoComments
 vim.keymap.set('n', '<leader>td', '<cmd>:TodoLocList<CR>', {desc = 'Show Todo List'})
+-- Tests
+vim.keymap.set('n', '<leader>nr', ':lua require("neotest").run.run()<CR>', {desc = 'Run unit tests'})
+vim.keymap.set('n', '<leader>ns', ':lua require("neotest").run.run({suite=true})<CR>', {desc = 'Run unit tests'})
+vim.keymap.set('n', '<leader>nc', ':lua require("neotest").run.stop()<CR>', {desc = 'Stop unit tests'})
+vim.keymap.set('n', '<leader>no', ':lua require("neotest").output.open()<CR>', {desc = 'Open test output'})
+vim.keymap.set('n', '<leader>nt', ':lua require("neotest").summary.toggle()<CR>', {desc = 'Toggle summary'})
 -- misc
 vim.keymap.set("n", "<leader>ee", "<cmd>GoIfErr<cr>", { silent = true, noremap = true })
 vim.keymap.set('n', '<Esc>', "<cmd>set nohlsearch<CR>")

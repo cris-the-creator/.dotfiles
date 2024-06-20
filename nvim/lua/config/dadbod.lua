@@ -19,6 +19,7 @@ function M.setup()
       "sql",
       "mysql",
       "plsql",
+      'redis'
     },
     callback = function()
       vim.schedule(db_completion)

@@ -105,7 +105,7 @@ require('lspconfig').lua_ls.setup {
 }
 
 require('lspconfig').intelephense.setup {
-on_attach = on_attach,
+  on_attach = on_attach,
   capabilities = capabilities,
   settings = {
     intelephense = {
@@ -129,7 +129,7 @@ local luasnip = require 'luasnip'
 
 cmp.setup {
   view = {
-  	entries = "native"
+    entries = "native"
   },
   snippet = {
     expand = function(args)

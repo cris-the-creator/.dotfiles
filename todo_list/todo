@@ -16,20 +16,22 @@ function todo(){
 		-a|--add)	mode=2 ;;
 		*[0-9]*)	mode=3 ;;
 		-q|--quiet)	mode=4 ;;
+		-c|--count) mode=6 ;;
 		*)		mode=5 ;;
 	esac
-	if [[ "${mode}" =~ ^[0-5]$ ]]; then
+	if [[ "${mode}" =~ ^[0-6]$ ]]; then
 		if [[ "${mode}" -eq 0 ]]; then
 			cat << EOF
 
 @Usage:	todo [INDEX]...
      	todo [OPTIONS [INDEX|ITEM]...]...
-List, add, or remove todo items.
+List, add, count or remove todo items.
 
 @OPTIONS:
 	-h,--help	This help message.
 	-r,--remove	Remove an item by INDEX number. 
 	-a,--add	Add an item by ITEM.
+	-c,--count Count items.
 	-q,--quiet	No error messages.
 @INDEX:
 	Integers	Index number of item.
@@ -56,6 +58,10 @@ EOF
 			readarray -t array < "${conf}"
 			echo "${array[$((${1} - 1))]}"
 			return
+		elif [[ "${mode}" -eq 6 ]]; then
+			readarray -t array < "${conf}"
+			echo ${#array[@]}
+			return
 		else
 			readarray -t array < "${conf}"
 			if [[ ${#array[@]} -eq 0 ]]; then
@@ -72,7 +78,7 @@ EOF
 }
 $(return >/dev/null 2>&1)
 if [ "$?" -eq "0" ]; then
-	complete -W '-h --help -r --remove -a --add -q --quiet' todo
+	complete -W '-h --help -r --remove -a --add -q --quiet -c --count' todo
 else
 	todo "$@"
 fi

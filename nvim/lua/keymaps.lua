@@ -30,9 +30,6 @@ vim.keymap.set("n", "s", function() require("flash").jump() end, { silent = true
 vim.keymap.set('n', '<leader>ow', '<cmd>:ObsidianWorkspace<CR>', {desc = 'Switch Obsidian Workspace'})
 vim.keymap.set('n', '<leader>os', '<cmd>:ObsidianSearch<CR>', {desc = 'Switch Obsidian Workspace'})
 vim.keymap.set('n', '<leader>on', '<cmd>:ObsidianNew<CR>', {desc = 'Switch Obsidian Workspace'})
--- TodoTxt
-vim.keymap.set('n', '<leader>tt', '<cmd>:ToDoTxtTasksToggle<CR>', {desc = 'Toggle Todo List'})
-vim.keymap.set('n', '<leader>tn', '<cmd>:ToDoTxtCapture<CR>', {desc = 'New Todo'})
 -- TodoComments
 vim.keymap.set('n', '<leader>td', '<cmd>:TodoLocList<CR>', {desc = 'Show Todo List'})
 -- Tests

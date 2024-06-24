@@ -36,7 +36,7 @@ dap.configurations.php = {
     port = 9003,
     log = false,
     pathMappings = {
-      ['/var/www/html'] = "${workspaceFolder}"
+      ['/var/www/html/app'] = "${workspaceFolder}"
     }
   }
 }

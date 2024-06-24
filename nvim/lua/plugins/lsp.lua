@@ -19,6 +19,7 @@ local on_attach = function(_, bufnr)
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
   nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
@@ -92,8 +93,7 @@ require('lspconfig').lua_ls.setup {
         path = runtime_path,
       },
       diagnostics = {
-        globals = { 'vim' },
-        disable = { 'undefined-global' }
+        globals = { 'vim', 'love' },
       },
       workspace = {
         library = vim.api.nvim_get_runtime_file('', true),

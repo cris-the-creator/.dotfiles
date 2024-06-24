@@ -53,6 +53,7 @@ require('lazy').setup({
   },
   'folke/zen-mode.nvim',
   'tpope/vim-obsession',
+  'f-person/git-blame.nvim',
   -- Database
   'kristijanhusak/vim-dadbod-ui',
   'kristijanhusak/vim-dadbod-completion',

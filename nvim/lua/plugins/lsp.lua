@@ -93,6 +93,7 @@ require('lspconfig').lua_ls.setup {
       },
       diagnostics = {
         globals = { 'vim' },
+        disable = { 'undefined-global' }
       },
       workspace = {
         library = vim.api.nvim_get_runtime_file('', true),

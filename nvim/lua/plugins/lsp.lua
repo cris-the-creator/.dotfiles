@@ -96,7 +96,9 @@ require('lspconfig').lua_ls.setup {
         globals = { 'vim', 'love' },
       },
       workspace = {
-        library = vim.api.nvim_get_runtime_file('', true),
+        library = {
+          '${3rd}/love2d/library'
+        },
         checkThirdParty = false,
       },
       -- Do not send telemetry data containing a randomized but unique identifier

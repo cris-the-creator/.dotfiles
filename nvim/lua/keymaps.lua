@@ -27,17 +27,17 @@ vim.keymap.set("n", "<leader><leader>", "<CMD>Oil<CR>", { desc = "Open parent di
 -- Flash
 vim.keymap.set("n", "s", function() require("flash").jump() end, { silent = true, noremap = true })
 -- Obsidian
-vim.keymap.set('n', '<leader>ow', '<cmd>:ObsidianWorkspace<CR>', {desc = 'Switch Obsidian Workspace'})
-vim.keymap.set('n', '<leader>os', '<cmd>:ObsidianSearch<CR>', {desc = 'Switch Obsidian Workspace'})
-vim.keymap.set('n', '<leader>on', '<cmd>:ObsidianNew<CR>', {desc = 'Switch Obsidian Workspace'})
+vim.keymap.set('n', '<leader>ow', '<cmd>:ObsidianWorkspace<CR>', { desc = 'Switch Obsidian Workspace' })
+vim.keymap.set('n', '<leader>os', '<cmd>:ObsidianSearch<CR>', { desc = 'Switch Obsidian Workspace' })
+vim.keymap.set('n', '<leader>on', '<cmd>:ObsidianNew<CR>', { desc = 'Switch Obsidian Workspace' })
 -- TodoComments
-vim.keymap.set('n', '<leader>td', '<cmd>:TodoLocList<CR>', {desc = 'Show Todo List'})
+vim.keymap.set('n', '<leader>td', '<cmd>:TodoLocList<CR>', { desc = 'Show Todo List' })
 -- Tests
-vim.keymap.set('n', '<leader>nr', ':lua require("neotest").run.run()<CR>', {desc = 'Run unit tests'})
-vim.keymap.set('n', '<leader>ns', ':lua require("neotest").run.run({suite=true})<CR>', {desc = 'Run unit tests'})
-vim.keymap.set('n', '<leader>nc', ':lua require("neotest").run.stop()<CR>', {desc = 'Stop unit tests'})
-vim.keymap.set('n', '<leader>no', ':lua require("neotest").output.open()<CR>', {desc = 'Open test output'})
-vim.keymap.set('n', '<leader>nt', ':lua require("neotest").summary.toggle()<CR>', {desc = 'Toggle summary'})
+vim.keymap.set('n', '<leader>nr', ':lua require("neotest").run.run()<CR>', { desc = 'Run unit tests' })
+vim.keymap.set('n', '<leader>ns', ':lua require("neotest").run.run({suite=true})<CR>', { desc = 'Run unit tests' })
+vim.keymap.set('n', '<leader>nc', ':lua require("neotest").run.stop()<CR>', { desc = 'Stop unit tests' })
+vim.keymap.set('n', '<leader>no', ':lua require("neotest").output.open()<CR>', { desc = 'Open test output' })
+vim.keymap.set('n', '<leader>nt', ':lua require("neotest").summary.toggle()<CR>', { desc = 'Toggle summary' })
 -- misc
 vim.keymap.set("n", "<leader>ee", "<cmd>GoIfErr<cr>", { silent = true, noremap = true })
 vim.keymap.set('n', '<Esc>', "<cmd>set nohlsearch<CR>")

@@ -6,6 +6,7 @@ vim.wo.number = true
 vim.o.relativenumber = true
 
 vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 
 -- Disable mouse mode
 vim.o.mouse = 'a'

@@ -43,7 +43,11 @@ dap.configurations.php = {
 dap.adapters.php = {
   type = 'executable',
   command = 'node',
+<<<<<<< HEAD
   args = { '/home/cris/vscode-php-debug/out/phpDebug.js' }
+=======
+  args = { '/home/cris/.local/vscode-php-debug/out/phpDebug.js' }
+>>>>>>> 40e1ea0ae486241ee4d8893278318e8f4badf32f
 }
 
 -- Go
@@ -56,9 +60,29 @@ end
 
 dap.configurations.go = {
   {
+<<<<<<< HEAD
     type = 'go',
     name = "Debug",
     request = "launch",
     program = "${file}",
+=======
+    type = 'php',
+    requrest = 'launch',
+    name = 'Local Xdebug',
+    port = 9003,
+    log = false,
+  },
+  {
+    type = 'php',
+    requrest = 'launch',
+    name = 'Docker Xdebug',
+    port = 9003,
+    log = false,
+    pathMappings = {
+      --['/var/www/html'] = "${workspaceFolder}"
+      ['/var/www/html'] = vim.fn.getcwd() .. '/',
+    },
+    hostname = '0.0.0.0'
+>>>>>>> 40e1ea0ae486241ee4d8893278318e8f4badf32f
   }
 }

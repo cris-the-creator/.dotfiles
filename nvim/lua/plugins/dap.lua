@@ -26,30 +26,6 @@ vim.api.nvim_set_keymap("n", "<leader>dc", ":DapContinue<CR>", { noremap = true 
 vim.api.nvim_set_keymap("n", "<leader>dr", ":lua require('dapui').open({reset = true})<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { noremap = true })
 
--- Php
-dap.configurations.php = {
-    {
-      type    = 'php',
-      request = 'launch',
-      name    = 'Listen for Xdebug',
-      port    = 9003,
-      log = true,
-      -- pathMappings = {
-      --   ['/var/www/html/'] = vim.fn.getcwd() .. '/',
-      --   ['/var/www/html/'] = "${workspaceFolder}",
-      -- }
-    },
-}
-dap.adapters.php = {
-  type = 'executable',
-  command = 'node',
-<<<<<<< HEAD
-  args = { '/home/cris/vscode-php-debug/out/phpDebug.js' }
-=======
-  args = { '/home/cris/.local/vscode-php-debug/out/phpDebug.js' }
->>>>>>> 40e1ea0ae486241ee4d8893278318e8f4badf32f
-}
-
 -- Go
 dap.adapters.go = function(callback, config)
   vim.defer_fn(function()
@@ -60,12 +36,22 @@ end
 
 dap.configurations.go = {
   {
-<<<<<<< HEAD
     type = 'go',
     name = "Debug",
     request = "launch",
     program = "${file}",
-=======
+  },
+}
+
+-- Php
+dap.adapters.php = {
+  type = 'executable',
+  command = 'node',
+  args = { '/home/cris/.local/vscode-php-debug/out/phpDebug.js' }
+}
+
+dap.configurations.php = {
+  {
     type = 'php',
     requrest = 'launch',
     name = 'Local Xdebug',
@@ -83,6 +69,5 @@ dap.configurations.go = {
       ['/var/www/html'] = vim.fn.getcwd() .. '/',
     },
     hostname = '0.0.0.0'
->>>>>>> 40e1ea0ae486241ee4d8893278318e8f4badf32f
   }
 }

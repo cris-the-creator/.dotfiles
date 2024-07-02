@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Fixes Notify opacity issues
+-- Fixes Notify opacity issues 
 vim.o.termguicolors = true
 
 require('lazy').setup({
@@ -301,5 +301,14 @@ require('lazy').setup({
             desc = 'Create a selection for selected text or word under the cursor',
         },
     },
-  }
+  },
+  { 
+    "lukas-reineke/virt-column.nvim", 
+    opts = {},
+    config = function()
+      require("virt-column").setup({
+        virtcolumn = "+1,120"
+      })
+    end
+  },
 })

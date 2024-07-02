@@ -1,20 +1,16 @@
--- twilight & zen
+-- Twilight & Zen
 vim.api.nvim_set_keymap("n", "tw", ":Twilight<enter>", { noremap = false })
 vim.api.nvim_set_keymap("n", "zm", ":ZenMode<enter>", { noremap = false })
--- buffers
-vim.api.nvim_set_keymap("n", "tk", ":blast<enter>", { noremap = false })
-vim.api.nvim_set_keymap("n", "tj", ":bfirst<enter>", { noremap = false })
-vim.api.nvim_set_keymap("n", "th", ":bprev<enter>", { noremap = false })
 vim.api.nvim_set_keymap("n", "tl", ":bnext<enter>", { noremap = false })
 vim.api.nvim_set_keymap("n", "td", ":bdelete<enter>", { noremap = false })
--- files
+-- Files
 vim.api.nvim_set_keymap("n", "<C-q>", ":q!<enter>", { noremap = false })
 vim.api.nvim_set_keymap("n", "<C-s>", ":w!<enter>", { noremap = false })
 vim.api.nvim_set_keymap("n", "E", "$", { noremap = false })
 vim.api.nvim_set_keymap("n", "B", "^", { noremap = false })
 vim.api.nvim_set_keymap("n", "TT", ":TransparentToggle<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "ss", ":noh<CR>", { noremap = true })
--- split
+-- Split
 vim.keymap.set('n', '<C-w>', '<cmd>vsplit<cr>', { desc = 'Vertical split' })
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
@@ -38,7 +34,9 @@ vim.keymap.set('n', '<leader>ns', ':lua require("neotest").run.run({suite=true})
 vim.keymap.set('n', '<leader>nc', ':lua require("neotest").run.stop()<CR>', { desc = 'Stop unit tests' })
 vim.keymap.set('n', '<leader>no', ':lua require("neotest").output.open()<CR>', { desc = 'Open test output' })
 vim.keymap.set('n', '<leader>nt', ':lua require("neotest").summary.toggle()<CR>', { desc = 'Toggle summary' })
--- misc
+-- DB
+vim.keymap.set('n', '<leader>db', ':DBUI<CR>', { desc = 'Toggle summary' })
+-- Misc
 vim.keymap.set("n", "<leader>ee", "<cmd>GoIfErr<cr>", { silent = true, noremap = true })
 vim.keymap.set('n', '<Esc>', "<cmd>set nohlsearch<CR>")
 vim.api.nvim_set_keymap('n', '<C-f>', "<cmd>Format<CR>", { noremap = false })

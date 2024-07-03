@@ -35,7 +35,7 @@ vim.keymap.set('n', '<leader>nc', ':lua require("neotest").run.stop()<CR>', { de
 vim.keymap.set('n', '<leader>no', ':lua require("neotest").output.open()<CR>', { desc = 'Open test output' })
 vim.keymap.set('n', '<leader>nt', ':lua require("neotest").summary.toggle()<CR>', { desc = 'Toggle summary' })
 -- DB
-vim.keymap.set('n', '<leader>db', ':DBUI<CR>', { desc = 'Toggle summary' })
+vim.keymap.set('n', '<leader>dd', ':DBUI<CR>', { desc = 'Toggle summary' })
 -- Misc
 vim.keymap.set("n", "<leader>ee", "<cmd>GoIfErr<cr>", { silent = true, noremap = true })
 vim.keymap.set('n', '<Esc>', "<cmd>set nohlsearch<CR>")

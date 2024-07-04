@@ -311,4 +311,5 @@ require('lazy').setup({
       })
     end
   },
+  {'Janiczek/vim-latte'}
 })

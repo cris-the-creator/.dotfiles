@@ -308,13 +308,10 @@ require('lazy').setup({
       })
     end
   },
-<<<<<<< HEAD
   {
     "LintaoAmons/scratch.nvim",
     event = "VeryLazy",
   },
-  { 'sindrets/diffview.nvim' }
-=======
+  { 'sindrets/diffview.nvim' },
   {'Janiczek/vim-latte'}
->>>>>>> 69e08e60c14b1a8e8353d31ef61ccb4ed14e8bb7
 })

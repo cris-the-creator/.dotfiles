@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Fixes Notify opacity issues 
+-- Fixes Notify opacity issues
 vim.o.termguicolors = true
 
 require('lazy').setup({
@@ -200,16 +200,24 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     }
   },
-'nvim-lua/plenary.nvim',
+  'nvim-lua/plenary.nvim',
   {
-    "mfussenegger/nvim-dap",
+    "mfussenegger/nvim-dap"
+  },
+  {
+    'theHamsta/nvim-dap-virtual-text',
     dependencies = {
-      "rcarriga/nvim-dap-ui",
-      "nvim-neotest/nvim-nio",
-      'leoluz/nvim-dap-go'
+      "mfussenegger/nvim-dap"
     }
   },
-  'theHamsta/nvim-dap-virtual-text',
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap"
+    }
+  },
+  { "nvim-neotest/nvim-nio" },
+  { 'leoluz/nvim-dap-go' },
   -- Git related plugins
   'tpope/vim-fugitive',
   'lewis6991/gitsigns.nvim',
@@ -233,17 +241,6 @@ require('lazy').setup({
     opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-  {
-    'arnarg/todotxt.nvim',
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-    },
-    config = function()
-      require('todotxt-nvim').setup({
-        todo_file = '/home/cris/.todo.txt',
-      })
-    end
   },
   {
     "olexsmir/gopher.nvim",
@@ -289,21 +286,21 @@ require('lazy').setup({
     "smoka7/multicursors.nvim",
     event = "VeryLazy",
     dependencies = {
-        'nvimtools/hydra.nvim',
+      'nvimtools/hydra.nvim',
     },
     opts = {},
     cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
     keys = {
-        {
-            mode = { 'v', 'n' },
-            '<Leader>mm',
-            '<cmd>MCstart<cr>',
-            desc = 'Create a selection for selected text or word under the cursor',
-        },
+      {
+        mode = { 'v', 'n' },
+        '<Leader>mm',
+        '<cmd>MCstart<cr>',
+        desc = 'Create a selection for selected text or word under the cursor',
+      },
     },
   },
-  { 
-    "lukas-reineke/virt-column.nvim", 
+  {
+    "lukas-reineke/virt-column.nvim",
     opts = {},
     config = function()
       require("virt-column").setup({
@@ -311,4 +308,9 @@ require('lazy').setup({
       })
     end
   },
+  {
+    "LintaoAmons/scratch.nvim",
+    event = "VeryLazy",
+  },
+  { 'sindrets/diffview.nvim' }
 })

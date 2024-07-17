@@ -1,4 +1,3 @@
-require('dapui').setup()
 require('dap-go').setup()
 require('nvim-dap-virtual-text').setup()
 
@@ -6,15 +5,10 @@ local dap, dapui = require("dap"), require("dapui")
 dap.listeners.before.attach.dapui_config = function()
   dapui.open()
 end
-dap.listeners.before.launch.dapui_config = function()
-  dapui.open()
-end
 dap.listeners.before.event_terminated.dapui_config = function()
   dapui.close()
 end
-dap.listeners.before.event_exited.dapui_config = function()
-  dapui.close()
-end
+dapui.setup()
 
 -- Debugger
 vim.fn.sign_define(
@@ -47,27 +41,40 @@ dap.configurations.go = {
 dap.adapters.php = {
   type = 'executable',
   command = 'node',
-  args = { '/home/cris/.local/vscode-php-debug/out/phpDebug.js' }
+  args = { os.getenv('HOME') .. '/.local/vscode-php-debug/out/phpDebug.js' },
 }
 
 dap.configurations.php = {
   {
     type = 'php',
-    requrest = 'launch',
+    request = 'launch',
     name = 'Local Xdebug',
     port = 9003,
     log = false,
   },
   {
     type = 'php',
-    requrest = 'launch',
+    request = 'launch',
     name = 'Docker Xdebug',
+    hostname = '0.0.0.0',
     port = 9003,
     log = false,
     pathMappings = {
-      --['/var/www/html'] = "${workspaceFolder}"
-      ['/var/www/html'] = vim.fn.getcwd() .. '/',
-    },
-    hostname = '0.0.0.0'
+      --['/var/www/html'] = vim.fn.expand("%:p:h") .. "/"
+      ['/var/www/html'] = "${workspaceFolder}"
+    --   --['/var/www/html'] = vim.fn.getcwd() .. '/',
+    }
+    --serverSourceRoot = '/var/www/html/',
+    --localSourceRoot = vim.fn.expand("%:p:h") .. "/",
   }
 }
+
+-- you'll want this because we don't want xdebug to start automatically everytime
+function insert_xdebug()
+  local pos = vim.api.nvim_win_get_cursor(0)[2]
+  local line = vim.api.nvim_get_current_line()
+  local nline = line:sub(0, pos) .. 'xdebug_break();' .. line:sub(pos + 1)
+  vim.api.nvim_set_current_line(nline)
+end
+
+vim.api.nvim_set_keymap("n", "<leader>dx", "<cmd>lua insert_xdebug()<cr>", { noremap = true })

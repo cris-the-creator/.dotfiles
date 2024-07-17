@@ -7,19 +7,19 @@ require('telescope').setup {
   defaults = {
     layout_strategy = "horizontal",
     layout_config = {
-      preview_width = 0.65,
-     horizontal = {
+      --preview_width = 0.65,
+      horizontal = {
         size = {
           width = "95%",
-          height = "95%",
+          --height = "95%",
         },
       },
     },
-  pickers = {
-    find_files = {
-      theme = "dropdown",
-    }
-  },
+    pickers = {
+      find_files = {
+        theme = "dropdown",
+      }
+    },
     mappings = {
       i = {
         ['<C-u>'] = false,
@@ -52,9 +52,11 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sb', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>sS', require('telescope.builtin').git_status, { desc = '' })
 vim.keymap.set('n', '<leader>sm', ":Telescope harpoon marks<CR>", { desc = 'Harpoon [M]arks' })
-vim.keymap.set("n", "<Leader>sr", "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", {silent = true})
-vim.keymap.set("n", "<Leader>sR", "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>", {silent = true})
-vim.keymap.set("n", "<Leader>sn", "<CMD>lua require('telescope').extensions.notify.notify()<CR>", {silent = true})
+vim.keymap.set("n", "<Leader>sr", "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
+  { silent = true })
+vim.keymap.set("n", "<Leader>sR", "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
+  { silent = true })
+vim.keymap.set("n", "<Leader>sn", "<CMD>lua require('telescope').extensions.notify.notify()<CR>", { silent = true })
 
-vim.api.nvim_set_keymap("n", "st", ":TodoTelescope<CR>", {noremap=true})
-vim.api.nvim_set_keymap("n", "<Leader><tab>", "<Cmd>lua require('telescope.builtin').commands()<CR>", {noremap=false})
+vim.api.nvim_set_keymap("n", "st", ":TodoTelescope<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader><tab>", "<Cmd>lua require('telescope.builtin').commands()<CR>", { noremap = false })

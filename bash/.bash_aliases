@@ -1,0 +1,5 @@
+alias spotify='spotify &'
+alias nvim='/nix/store/38aminzmwwqm96zj73017c620yisq78j-profile/bin/nvim'
+alias gg='lazygit'
+alias yy='yazi'
+alias fck='thefuck'

@@ -1,0 +1,5 @@
+[[ -s /home/cris/.autojump/etc/profile.d/autojump.sh ]] && source /home/cris/.autojump/etc/profile.d/autojump.sh
+
+eval "$(devbox global shellenv)"
+
+eval "$(starship init bash)"

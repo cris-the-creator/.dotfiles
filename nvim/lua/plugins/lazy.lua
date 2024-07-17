@@ -304,6 +304,7 @@ require('lazy').setup({
     opts = {},
     config = function()
       require("virt-column").setup({
+        char = ".",
         virtcolumn = "+1,120"
       })
     end
@@ -313,5 +314,5 @@ require('lazy').setup({
     event = "VeryLazy",
   },
   { 'sindrets/diffview.nvim' },
-  {'Janiczek/vim-latte'}
+  { 'Janiczek/vim-latte' }
 })

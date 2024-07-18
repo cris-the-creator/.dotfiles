@@ -17,8 +17,8 @@
     "todo@latest",
     "cargo@latest",
     "ripgrep@latest",
-    "fzf@latest",
-    "gnome-tweaks@latest"
+    "gnome-tweaks@latest",
+    "fzf@latest"
   ],
   "shell": {
     "init_hook": [

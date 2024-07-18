@@ -3,7 +3,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 --Font
-config.font = wezterm.font 'VictorMono NFM'
+config.font = wezterm.font_with_fallback { 'VictorMono NFM', 'Fira Code' }
 config.font_size = 14
 
 -- Tabbar
@@ -52,12 +52,12 @@ config.keys = {
 	},
 }
 for i = 1, 8 do
-  -- [CTRL+ALT + number] to activate tab
-  table.insert(config.keys, {
-    key = tostring(i),
-    mods = 'CTRL|SHIFT',
-    action = wezterm.action.ActivateTab(i - 1),
-  })
+	-- [CTRL+ALT + number] to activate tab
+	table.insert(config.keys, {
+		key = tostring(i),
+		mods = 'CTRL|SHIFT',
+		action = wezterm.action.ActivateTab(i - 1),
+	})
 end
 
 return config

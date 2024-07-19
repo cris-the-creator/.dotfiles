@@ -34,6 +34,13 @@ vim.keymap.set('n', '<leader>no', ':lua require("neotest").output.open()<CR>', {
 vim.keymap.set('n', '<leader>nt', ':lua require("neotest").summary.toggle()<CR>', { desc = 'Toggle summary' })
 -- DB (DD)
 vim.keymap.set('n', '<leader>dd', ':DBUI<CR>', { desc = 'Toggle summary' })
+-- Trouble (X)
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
+vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
 -- Sratch Files
 vim.keymap.set("n", "<M-C-n>", "<cmd>Scratch<cr>")
 vim.keymap.set("n", "<M-C-o>", "<cmd>ScratchOpen<cr>")

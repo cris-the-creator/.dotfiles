@@ -1,12 +1,8 @@
 require("obsidian").setup({
   workspaces = {
     {
-      name = "Notes",
-      path = "/home/cris/obsidian/notes",
-    },
-    {
       name = "Senti",
-      path = "/home/cris/obsidian/senti",
+      path = "/home/cris/obsidian/Senti",
     }
   },
   mappings = {

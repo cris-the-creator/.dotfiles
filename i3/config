@@ -192,7 +192,7 @@ bar {
                 focused_workspace #000000 $bg-color #000000
         }
 
-        status_command SCRIPT_DIR=~/.config/i3blocks i3blocks
+        status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
 }
 
 # Borders

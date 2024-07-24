@@ -19,7 +19,9 @@
     "ripgrep@latest",
     "gnome-tweaks@latest",
     "taskwarrior@latest",
-    "gcc@latest"
+    "gcc@latest",
+    "docker@latest",
+    "docker-compose@latest"
   ],
   "shell": {
     "init_hook": [

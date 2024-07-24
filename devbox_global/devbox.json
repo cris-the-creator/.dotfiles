@@ -18,7 +18,8 @@
     "cargo@latest",
     "ripgrep@latest",
     "gnome-tweaks@latest",
-    "taskwarrior@latest"
+    "taskwarrior@latest",
+    "gcc@latest"
   ],
   "shell": {
     "init_hook": [

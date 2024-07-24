@@ -36,3 +36,6 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- Concealer for Neorg
 vim.o.conceallevel = 2
+
+-- Lua line bottom margin
+vim.opt.cmdheight = 0

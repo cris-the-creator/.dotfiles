@@ -18,7 +18,6 @@
     "cargo@latest",
     "ripgrep@latest",
     "gnome-tweaks@latest",
-    "fzf@latest",
     "taskwarrior@latest"
   ],
   "shell": {

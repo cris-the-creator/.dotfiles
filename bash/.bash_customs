@@ -1,5 +1,10 @@
+export PATH=$PATH:$HOME/go/bin
+export WATSON_DIR=$HOME/.local/watson
+
 [[ -s /home/cris/.autojump/etc/profile.d/autojump.sh ]] && source /home/cris/.autojump/etc/profile.d/autojump.sh
 
-eval "$(devbox global shellenv)"
+eval $(ssh-agent -s) &> /dev/null # ssh key agent
 
-eval "$(starship init bash)"
+eval "$(devbox global shellenv)" # devbox global
+
+eval "$(starship init bash)" # starship

@@ -35,6 +35,11 @@ command=python3 $SCRIPT_DIR/spotify.py
 interval=5
 color=#30f264
 
+[watson]
+label=
+command=$SCRIPT_DIR/watson_status
+interval=5
+
 [TitleIcon]
 command= echo "󰍹"
 interval=persist

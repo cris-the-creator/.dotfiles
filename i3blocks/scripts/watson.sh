@@ -1,11 +1,14 @@
 #!/bin/bash 
-echo $(watson status)
-if [[ "$(watson status)" == "No project started." ]]; then
-    echo "N"
-    exit 0
-fi
 
-#TOTAL=$(watson report -dcG | grep 'Total:' | sed 's/Total: //')
-TOTAL=$(watson status)
-echo "$TOTAL"
+function mrwatson() {
+    if [[ "$(cd /home/cris/.local/bin && ./watson status)" == "No project started." ]]; then
+        printf ""
+        return
+    fi
+    local project=$(cd /home/cris/.local/bin && ./watson status --project)
+    local total=$(cd /home/cris/.local/bin && ./watson report -dcG | grep 'Total:' | sed 's/Total: //')
+    printf "${total} [${project}]"
+}
+
+mrwatson
 

@@ -1,5 +1,5 @@
 export PATH=$PATH:$HOME/go/bin
-export WATSON_DIR=$HOME/.local/watson
+export PATH="$HOME/.local/bin:$PATH"
 
 [[ -s /home/cris/.autojump/etc/profile.d/autojump.sh ]] && source /home/cris/.autojump/etc/profile.d/autojump.sh
 

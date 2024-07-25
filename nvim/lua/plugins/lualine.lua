@@ -5,9 +5,11 @@ require('lualine').setup {
     section_separators = '',
   },
   sections = {
-        lualine_a = {
+    lualine_a = {
       {
-        --'buffers',
+        'filename',
+        path = 3,
+        shorting_target = 40,
       }
     }
   }

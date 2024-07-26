@@ -7,16 +7,13 @@ require('telescope').setup {
   defaults = {
     layout_strategy = "horizontal",
     layout_config = {
-      --preview_width = 0.65,
-      horizontal = {
-        size = {
-          width = "95%",
-          --height = "95%",
-        },
-      },
+      horizontal = { width = 0.7 },
     },
     pickers = {
       find_files = {
+        theme = "dropdown",
+      },
+      live_grep= {
         theme = "dropdown",
       }
     },

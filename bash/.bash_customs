@@ -1,5 +1,6 @@
 export PATH=$PATH:$HOME/go/bin
 export PATH="$HOME/.local/bin:$PATH"
+export PATH=$PATH:$HOME/.local/node_modules/bin
 
 [[ -s /home/cris/.autojump/etc/profile.d/autojump.sh ]] && source /home/cris/.autojump/etc/profile.d/autojump.sh
 

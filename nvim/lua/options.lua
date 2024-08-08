@@ -1,3 +1,6 @@
+-- Set colorscheme
+vim.cmd.colorscheme "darkvoid"
+
 -- Set highlight on search
 vim.o.hlsearch = true
 
@@ -24,9 +27,6 @@ vim.o.smartcase = true
 -- Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
-
--- Set colorscheme
-vim.cmd.colorscheme "tokyonight-night"
 
 --vim.cmd()
 vim.opt.clipboard = 'unnamedplus'

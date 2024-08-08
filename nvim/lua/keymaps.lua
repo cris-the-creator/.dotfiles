@@ -26,6 +26,8 @@ vim.keymap.set("n", "s", function() require("flash").jump() end, { silent = true
 vim.keymap.set('n', '<leader>oo', '<cmd>:ObsidianQuickSwitch<CR>', { desc = 'Switch to Note' })
 vim.keymap.set('n', '<leader>os', '<cmd>:ObsidianSearch<CR>', { desc = 'Search Notes' })
 vim.keymap.set('n', '<leader>on', '<cmd>:ObsidianNew<CR>', { desc = 'New Note' })
+-- Hardtime (H)
+vim.keymap.set('n', '<leader>h', '<cmd>:Hardtime toggle<CR>', { desc = 'Toggle Hardtime' })
 -- Tests (N)
 vim.keymap.set('n', '<leader>nr', ':lua require("neotest").run.run()<CR>', { desc = 'Run unit tests' })
 vim.keymap.set('n', '<leader>ns', ':lua require("neotest").run.run({suite=true})<CR>', { desc = 'Run unit tests' })

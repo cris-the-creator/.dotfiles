@@ -1,6 +1,8 @@
 -- Set colorscheme
 vim.cmd.colorscheme "darkvoid"
 
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+
 -- Set highlight on search
 vim.o.hlsearch = true
 

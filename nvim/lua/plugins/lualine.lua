@@ -11,6 +11,13 @@ require('lualine').setup {
         path = 3,
         shorting_target = 40,
       }
+    },
+    lualine_c = {
+      {
+        'navic',
+        color_correction = nil,
+        navic_opts = nil,
+      }
     }
   }
 }

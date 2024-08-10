@@ -54,6 +54,5 @@ vim.keymap.set("n", "<Leader>sr", "<CMD>lua require('telescope').extensions.git_
 vim.keymap.set("n", "<Leader>sR", "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
   { silent = true })
 vim.keymap.set("n", "<Leader>sn", "<CMD>lua require('telescope').extensions.notify.notify()<CR>", { silent = true })
-
-vim.api.nvim_set_keymap("n", "st", ":TodoTelescope<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader><tab>", "<Cmd>lua require('telescope.builtin').commands()<CR>", { noremap = false })
+

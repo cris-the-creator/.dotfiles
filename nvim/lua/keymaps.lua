@@ -22,6 +22,8 @@ vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = tru
 vim.keymap.set("n", "<leader><leader>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 -- Flash (S)
 vim.keymap.set("n", "s", function() require("flash").jump() end, { silent = true, noremap = true })
+-- TODOs (T)
+vim.api.nvim_set_keymap("n", "<leader>t", ":TodoTelescope<CR>", { noremap = true })
 -- Obsidian (O)
 vim.keymap.set('n', '<leader>oo', '<cmd>:ObsidianQuickSwitch<CR>', { desc = 'Switch to Note' })
 vim.keymap.set('n', '<leader>os', '<cmd>:ObsidianSearch<CR>', { desc = 'Search Notes' })

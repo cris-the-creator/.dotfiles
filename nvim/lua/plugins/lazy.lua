@@ -158,6 +158,7 @@ require('lazy').setup({
       })
     end
   },
+  -- COLORSCHEMES
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -167,6 +168,16 @@ require('lazy').setup({
       require("tokyonight").setup({
         transparent = true,
         style = "night",
+      })
+    end
+  },
+  {
+    'aliqyan-21/darkvoid.nvim',
+    config = function()
+      require('darkvoid').setup({
+        transparent = true,
+        glow = true,
+        show_end_of_buffer = false,
       })
     end
   },
@@ -190,6 +201,15 @@ require('lazy').setup({
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+    config = function()
+      local cmp = require("cmp")
+      cmp.setup {
+        sources = cmp.config.sources({
+          { name = 'cody' },
+          { name = 'nvim_lsp' },
+        })
+      }
+    end
   },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -221,10 +241,15 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'lewis6991/gitsigns.nvim',
-  'nvim-lualine/lualine.nvim', -- Fancier statusline
+  {
+    'nvim-lualine/lualine.nvim',
+    confing = function()
+      require('darkvoid').setup()
+    end
+  },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl",     opts = {} },
-  'numToStr/Comment.nvim',     -- "gc" to comment visual regions/lines
-  'tpope/vim-sleuth',          -- Detect tabstop and shiftwidth automatically
+  'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
+  'tpope/vim-sleuth',      -- Detect tabstop and shiftwidth automatically
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim',       branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
   'nvim-telescope/telescope-symbols.nvim',
@@ -314,5 +339,44 @@ require('lazy').setup({
     event = "VeryLazy",
   },
   { 'sindrets/diffview.nvim' },
-  { 'Janiczek/vim-latte' }
+  { 'Janiczek/vim-latte' },
+  {
+    "sourcegraph/sg.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", --[[ "nvim-telescope/telescope.nvim ]] },
+
+    -- If you have a recent version of lazy.nvim, you don't need to add this!
+    build = "nvim -l build/init.lua",
+    config = function()
+      require('sg').setup()
+    end
+  },
+  {
+    "hedyhli/outline.nvim",
+    lazy = true,
+    cmd = { "Outline", "OutlineOpen" },
+    keys = { -- Example mapping to toggle outline
+      { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+    },
+    opts = {
+      outline_window = {
+        position = 'left',
+        width = 15
+      },
+      preview_window = {
+        auto_preview = true,
+      }
+    },
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {}
+  },
+  {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig",
+    config = function()
+      require('nvim-navic').setup()
+    end
+  }
 })

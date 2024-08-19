@@ -20,9 +20,7 @@
     "taskwarrior@latest",
     "gcc@latest",
     "docker@latest",
-    "docker-compose@latest",
-    "elixir@latest",
-    "erlang@latest"
+    "docker-compose@latest"
   ],
   "shell": {
     "init_hook": [

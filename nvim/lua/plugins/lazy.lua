@@ -378,5 +378,11 @@ require('lazy').setup({
     config = function()
       require('nvim-navic').setup()
     end
-  }
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function ()
+      require("nvim-ts-autotag").setup({}) 
+    end
+  } 
 })

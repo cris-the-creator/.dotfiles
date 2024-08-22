@@ -368,11 +368,6 @@ require('lazy').setup({
     },
   },
   {
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    opts = {}
-  },
-  {
     "SmiteshP/nvim-navic",
     requires = "neovim/nvim-lspconfig",
     config = function()

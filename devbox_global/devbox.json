@@ -19,7 +19,9 @@
     "taskwarrior@latest",
     "gcc@latest",
     "docker@latest",
-    "docker-compose@latest"
+    "docker-compose@latest",
+    "kubectl@latest",
+    "minikube@latest"
   ],
   "shell": {
     "init_hook": [

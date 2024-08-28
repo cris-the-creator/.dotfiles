@@ -1,7 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.12.0/.schema/devbox.schema.json",
   "packages": [
-    "go@latest",
     "yazi@latest",
     "gnome-browser-connector@latest",
     "neovim@latest",
@@ -21,7 +20,8 @@
     "docker@latest",
     "docker-compose@latest",
     "kubectl@latest",
-    "minikube@latest"
+    "minikube@latest",
+    "fzf@latest"
   ],
   "shell": {
     "init_hook": [

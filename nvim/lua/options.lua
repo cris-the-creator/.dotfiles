@@ -41,3 +41,6 @@ vim.o.conceallevel = 2
 
 -- Lua line bottom margin
 vim.opt.cmdheight = 0
+
+-- Bottom padding
+vim.opt.scrolloff = 8

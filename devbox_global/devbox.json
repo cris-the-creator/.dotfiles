@@ -21,7 +21,8 @@
     "docker-compose@latest",
     "kubectl@latest",
     "minikube@latest",
-    "fzf@latest"
+    "fzf@latest",
+    "lua-language-server@latest"
   ],
   "shell": {
     "init_hook": [

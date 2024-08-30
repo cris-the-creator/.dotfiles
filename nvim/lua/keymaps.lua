@@ -43,6 +43,10 @@ vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
 vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
 vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
+-- Quickfix List (Q)
+vim.keymap.set("n", "<leader>qq", "<cmd>copen<cr>")
+vim.keymap.set("n", "<leader>qn", "<cmd>cnext<cr>")
+vim.keymap.set("n", "<leader>qp", "<cmd>cprev<cr>")
 -- Sratch Files
 vim.keymap.set("n", "<M-C-n>", "<cmd>Scratch<cr>")
 vim.keymap.set("n", "<M-C-o>", "<cmd>ScratchOpen<cr>")

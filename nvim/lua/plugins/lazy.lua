@@ -286,9 +286,7 @@ require('lazy').setup({
     config = function()
       require('neotest').setup({
         adapters = {
-          require('neotest-phpunit')({
-            phpunit_cmd = 'vendor/bin/phpunit',
-          })
+          require('neotest-phpunit')({})
         },
         diagnostic = {
           enabled = true

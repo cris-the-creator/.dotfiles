@@ -1,3 +1,4 @@
+export GOPATH=$HOME/go/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:$HOME/.local/node_modules/bin
@@ -11,3 +12,5 @@ eval $(ssh-agent -s) &> /dev/null # ssh key agent
 eval "$(devbox global shellenv)" # devbox global
 
 eval "$(starship init bash)" # starship
+
+eval "$(fzf --bash)"

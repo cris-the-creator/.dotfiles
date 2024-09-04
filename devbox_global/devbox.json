@@ -22,7 +22,8 @@
     "kubectl@latest",
     "minikube@latest",
     "fzf@latest",
-    "lua-language-server@latest"
+    "lua-language-server@latest",
+    "zig@latest"
   ],
   "shell": {
     "init_hook": [

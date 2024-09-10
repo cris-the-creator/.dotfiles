@@ -3,6 +3,7 @@ require('lualine').setup {
     icons_enabled = true,
     component_separators = '|',
     section_separators = '',
+    theme = 'auto',
   },
   sections = {
     lualine_a = {
@@ -12,6 +13,7 @@ require('lualine').setup {
         shorting_target = 40,
       }
     },
+    lualine_b = {},
     lualine_c = {
       {
         'navic',
@@ -19,5 +21,5 @@ require('lualine').setup {
         navic_opts = nil,
       }
     }
-  }
+  },
 }

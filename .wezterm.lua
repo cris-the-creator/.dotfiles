@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 --Font
 config.font = wezterm.font_with_fallback { 'Dank Mono', 'VictorMono NFM', 'Fira Code' }
 config.font_size = 16
-config.line_height = 1.2
+config.line_height = 1.3
 config.freetype_load_target = 'HorizontalLcd'
 
 -- Tabbar

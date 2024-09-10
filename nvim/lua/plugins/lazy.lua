@@ -243,9 +243,6 @@ require('lazy').setup({
   'lewis6991/gitsigns.nvim',
   {
     'nvim-lualine/lualine.nvim',
-    confing = function()
-      require('darkvoid').setup()
-    end
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl",     opts = {} },
   'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
@@ -338,16 +335,6 @@ require('lazy').setup({
   },
   { 'sindrets/diffview.nvim' },
   { 'Janiczek/vim-latte' },
-  {
-    "sourcegraph/sg.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", --[[ "nvim-telescope/telescope.nvim ]] },
-
-    -- If you have a recent version of lazy.nvim, you don't need to add this!
-    build = "nvim -l build/init.lua",
-    config = function()
-      require('sg').setup()
-    end
-  },
   {
     "hedyhli/outline.nvim",
     lazy = true,

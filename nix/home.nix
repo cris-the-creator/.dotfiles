@@ -6,15 +6,22 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   home.packages = [];
-
-  home.file = {};
-
   home.sessionVariables = {};
+
+  home.file = {
+    ".bash_aliases".source = ~/.dotfiles-private/bash/.bash_aliases;
+    ".bash_customs".source = ~/.dotfiles-private/bash/.bash_customs;
+    ".tmux.conf".source = ~/.dotfiles/tmux/.tmux.conf;
+    ".wezterm.lua".source = ~/.dotfiles/.wezterm.lua;
+    ".config/lazygit/".source = ~/.dotfiles/lazygit;
+    ".config/nvim/".source = ~/.dotfiles/nvim;
+    ".config/i3/".source = ~/.dotfiles/i3;
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.gpg-agent = {
+  services.gpg-agent = {
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
@@ -31,57 +38,11 @@
     vimAlias = true;
     vimdiffAlias = true;
   };
-  programs.yazi = {
-    enable = true;
-  };
-  programs.starship = {
-    enable = true;
-  };
-  programs.tmux = {
-    enable = true;
-  };
-  programs.lazygit = {
-    enable = true;
-  };
-  programs.thefuck = {
-    enable = true;
-  };
-  programs.autojump = {
-    enable = true;
-  };
-  programs.fzf = {
-    enable = true;
-  };
-  # programs.cargo = {
-  #   enable = true;
-  # };
-  programs.ripgrep = {
-    enable = true;
-  };
-
-  #   enable = true;
-  # };
-  # programs.docker = {
-  #   enable = true;
-  # };
-  # programs.docker-compose = {
-  #   enable = true;
-  # };
-  # programs.kubectl = {
-  #   enable = true;
-  # };
-  # programs.minikube = {
-  #   enable = true;
-  # };
-  
-  # Languages
-  # programs.typescript = {
-  #   enable = true;
-  # };
-  # programs.zig = {
-  #   enable = true;
-  # };
-  # programs.go = {
-  #   enable = true;
-  # };
+  programs.yazi = { enable = true; };
+  programs.starship = { enable = true; };
+  programs.lazygit = { enable = true; };
+  programs.thefuck = { enable = true; };
+  programs.autojump = { enable = true; };
+  programs.fzf = { enable = true; };
+  programs.ripgrep = { enable = true; };
 }

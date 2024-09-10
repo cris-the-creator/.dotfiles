@@ -5,7 +5,6 @@
     "gnome-browser-connector@latest",
     "neovim@latest",
     "starship@latest",
-    "tmux@latest",
     "lazygit@latest",
     "thefuck@latest",
     "typescript@latest",
@@ -23,7 +22,8 @@
     "minikube@latest",
     "fzf@latest",
     "lua-language-server@latest",
-    "zig@latest"
+    "zig@latest",
+    "tmux@latest"
   ],
   "shell": {
     "init_hook": [

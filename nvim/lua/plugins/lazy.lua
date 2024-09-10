@@ -244,7 +244,7 @@ require('lazy').setup({
   {
     'nvim-lualine/lualine.nvim',
     confing = function()
-      require('darkvoid').setup()
+      require('tokyonight').setup()
     end
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl",     opts = {} },

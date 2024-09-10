@@ -56,7 +56,7 @@ end
 require('mason').setup()
 
 -- Enable the following language servers
-local servers = { 'lua_ls', 'clangd', 'pyright', 'tsserver', 'gopls', 'intelephense', 'html', 'ols', 'bashls' }
+local servers = { 'lua_ls', 'clangd', 'pyright', 'ts_ls', 'gopls', 'intelephense', 'html', 'ols', 'bashls' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {

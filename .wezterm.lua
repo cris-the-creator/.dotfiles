@@ -22,8 +22,8 @@ config.colors = {
 
 -- Window
 config.window_decorations = 'RESIZE'
-config.window_background_opacity = 0.97
-config.color_scheme = 'Dark Ocean (terminal.sexy)'
+config.window_background_opacity = 0.98
+config.color_scheme = 'tokyonight'
 
 -- Hotkeys
 config.keys = {

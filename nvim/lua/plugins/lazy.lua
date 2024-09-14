@@ -297,7 +297,6 @@ require('lazy').setup({
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",
     },
-
     keys = {
       { "<leader>yy", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
     },
@@ -361,8 +360,9 @@ require('lazy').setup({
   },
   {
     "windwp/nvim-ts-autotag",
-    config = function ()
-      require("nvim-ts-autotag").setup({}) 
+    config = function()
+      require("nvim-ts-autotag").setup({})
     end
-  } 
+  },
+  { "kkoomen/vim-doge" }
 })

@@ -23,7 +23,7 @@ config.colors = {
 -- Window
 config.window_decorations = 'RESIZE'
 config.window_background_opacity = 0.98
-config.color_scheme = 'tokyonight'
+config.color_scheme = 'Afterglow'
 
 -- Hotkeys
 config.keys = {

@@ -9,13 +9,13 @@
   home.sessionVariables = {};
 
   home.file = {
-    ".bash_aliases".source = ~/.dotfiles-private/bash/.bash_aliases;
-    ".bash_customs".source = ~/.dotfiles-private/bash/.bash_customs;
+    ".config/bashrc/11-bash_aliases".source = ~/.dotfiles-private/bash/.bash_aliases;
+    ".config/bashrc/21-bash_customs".source = ~/.dotfiles-private/bash/.bash_customs;
     ".tmux.conf".source = ~/.dotfiles/tmux/.tmux.conf;
-    ".wezterm.lua".source = ~/.dotfiles/.wezterm.lua;
+    # ".wezterm.lua".source = ~/.dotfiles/.wezterm.lua;
     ".config/lazygit/".source = ~/.dotfiles/lazygit;
     ".config/nvim/".source = ~/.dotfiles/nvim;
-    ".config/i3/".source = ~/.dotfiles/i3;
+    # ".config/i3/".source = ~/.dotfiles/i3;
   };
 
   # Let Home Manager install and manage itself.

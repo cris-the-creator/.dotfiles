@@ -29,29 +29,24 @@ command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=25
 markup=none
 
-[spotify]
-label=󰝚
-command=python3 $SCRIPT_DIR/spotify.py
-interval=5
-color=#30f264
+# [spotify]
+# label=󰝚
+# command=python3 $SCRIPT_DIR/spotify.py
+# interval=5
+# color=#30f264
 
-[watson]
-label=
-command=$SCRIPT_DIR/watson_status
-interval=5
-
-[TitleIcon]
-command= echo "󰍹"
-interval=persist
-separator=false
-align=right
-
-[Title]
-command=xdotool getactivewindow getwindowname 2> /dev/null || echo "None"
-interval=1
-align=center
-min_width=500
-background=#1f1f1f
+# [TitleIcon]
+# command= echo "󰍹"
+# interval=persist
+# separator=false
+# align=right
+#
+# [Title]
+# command=xdotool getactivewindow getwindowname 2> /dev/null || echo "None"
+# interval=1
+# align=center
+# min_width=500
+# background=#1f1f1f
 
 
 [volume]

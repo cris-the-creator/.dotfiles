@@ -44,3 +44,9 @@ vim.opt.cmdheight = 0
 
 -- Bottom padding
 vim.opt.scrolloff = 8
+
+vim.filetype.add({
+  pattern = {
+    [".*%.blade%.php"] = "blade",
+  }
+})

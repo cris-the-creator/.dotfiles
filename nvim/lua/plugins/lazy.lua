@@ -182,7 +182,8 @@ require('lazy').setup({
     end
   },
   {
-    "rose-pine/neovim", name = "rose-pine",
+    "rose-pine/neovim",
+    name = "rose-pine",
     config = function()
       require('rose-pine').setup({
         styles = {
@@ -377,5 +378,14 @@ require('lazy').setup({
     end
   },
   { "kkoomen/vim-doge" },
-  { 'EmranMR/tree-sitter-blade' }
+  {
+    'stevearc/conform.nvim',
+    config = function()
+      require("conform").setup({
+        formatters_by_ft = {
+          blade = { "blade-formatter" }
+        },
+      })
+    end
+  }
 })

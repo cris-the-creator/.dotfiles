@@ -22,8 +22,8 @@ config.colors = {
 
 -- Window
 config.window_decorations = 'RESIZE'
-config.window_background_opacity = 0.95
-config.color_scheme = 'Afterglow'
+config.window_background_opacity = 0.97
+config.color_scheme = 'rose-pine'
 
 -- Hotkeys
 config.keys = {

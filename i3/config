@@ -222,6 +222,6 @@ workspace 9 output eDP-1-1
 # Misc
 exec --no-startup-id unclutter &
 
-exec --no-startup-id sleep 2 && nitrogen --restore &
+exec --no-startup-id nitrogen --restore &
 
 exec --no-startup-id compton

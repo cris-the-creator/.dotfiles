@@ -1,6 +1,5 @@
 -- Set colorscheme
-vim.cmd.colorscheme "rose-pine"
--- vim.cmd.colorscheme "kanagawa-paper"
+vim.cmd.colorscheme "catppuccin"
 
 -- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 

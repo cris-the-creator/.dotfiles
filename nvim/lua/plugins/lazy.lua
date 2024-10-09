@@ -178,6 +178,10 @@ require('lazy').setup({
         transparent = true,
         glow = true,
         show_end_of_buffer = false,
+        colors = {
+          kw = "#D9FFDA",
+          string = "#CCE5E5"
+        }
       })
     end
   },
@@ -190,6 +194,26 @@ require('lazy').setup({
           bold = true,
           italic = true,
           transparency = true,
+        }
+      })
+    end
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function ()
+      require("catppuccin").setup({
+        flavour = "mocha",
+        transparent_background = true,
+        no_underline = true,
+        styles = {
+          functions = { "bold" },
+        },
+        color_overrides = {
+          all = {
+            mauve = "#ee8568"
+          }
         }
       })
     end
@@ -254,17 +278,15 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'lewis6991/gitsigns.nvim',
-  {
-    'nvim-lualine/lualine.nvim',
-  },
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl",     opts = {} },
+  { 'nvim-lualine/lualine.nvim' },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
   'tpope/vim-sleuth',      -- Detect tabstop and shiftwidth automatically
   -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim',       branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'nvim-telescope/telescope.nvim',            branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
   'nvim-telescope/telescope-symbols.nvim',
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make',   cond = vim.fn.executable 'make' == 1 },
   {
     "folke/twilight.nvim",
     opts = {

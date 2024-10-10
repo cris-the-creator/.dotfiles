@@ -3,8 +3,8 @@
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = {
-    'go', 'lua', 'python','typescript', 'regex',
-    'bash', 'markdown', 'markdown_inline','sql', 'org', 'html',
+    'go', 'lua', 'python', 'typescript', 'regex', 'php',
+    'bash', 'markdown', 'markdown_inline', 'sql', 'org', 'html',
     'css', 'javascript', 'yaml', 'json', 'toml'
   },
   auto_install = true,
@@ -70,4 +70,14 @@ require('nvim-treesitter.configs').setup {
       },
     },
   },
+}
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.blade = {
+  install_info = {
+    url = "https://github.com/EmranMR/tree-sitter-blade",
+    files = { "src/parser.c" },
+    branch = "main",
+  },
+  filetype = "blade",
 }

@@ -1,5 +1,5 @@
 -- Set colorscheme
-vim.cmd.colorscheme "rose-pine"
+vim.cmd.colorscheme "catppuccin"
 
 -- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
@@ -44,3 +44,9 @@ vim.opt.cmdheight = 0
 
 -- Bottom padding
 vim.opt.scrolloff = 8
+
+vim.filetype.add({
+  pattern = {
+    [".*%.blade%.php"] = "blade",
+  }
+})

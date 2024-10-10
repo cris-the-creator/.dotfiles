@@ -5,25 +5,21 @@
     "gnome-browser-connector@latest",
     "neovim@latest",
     "starship@latest",
-    "tmux@latest",
     "lazygit@latest",
     "thefuck@latest",
     "typescript@latest",
-    "odin@latest",
-    "ols@latest",
     "todo@latest",
     "cargo@latest",
     "ripgrep@latest",
     "gnome-tweaks@latest",
-    "taskwarrior@latest",
     "gcc@latest",
-    "docker@latest",
-    "docker-compose@latest",
     "kubectl@latest",
     "minikube@latest",
     "fzf@latest",
     "lua-language-server@latest",
-    "zig@latest"
+    "tmux@latest",
+    "nitrogen@latest",
+    "compton@latest"
   ],
   "shell": {
     "init_hook": [

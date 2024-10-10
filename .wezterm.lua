@@ -22,8 +22,9 @@ config.colors = {
 
 -- Window
 config.window_decorations = 'RESIZE'
-config.window_background_opacity = 0.98
-config.color_scheme = 'Afterglow'
+config.window_background_opacity = 0
+config.color_scheme = 'Catppuccin Mocha'
+config.win32_system_backdrop = 'Tabbed'
 
 -- Hotkeys
 config.keys = {

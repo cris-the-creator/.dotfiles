@@ -22,7 +22,7 @@ config.colors = {
 
 -- Window
 config.window_decorations = 'RESIZE'
-config.window_background_opacity = 0.98
+config.window_background_opacity = 0.95
 config.color_scheme = 'Catppuccin Mocha'
 config.win32_system_backdrop = 'Acrylic'
 

@@ -1,5 +1,5 @@
 -- Set colorscheme
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "kanagawa-dragon"
 
 -- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
@@ -40,7 +40,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.conceallevel = 2
 
 -- Lua line bottom margin
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 320
 
 -- Bottom padding
 vim.opt.scrolloff = 8

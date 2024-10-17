@@ -167,7 +167,6 @@ require('lazy').setup({
     config = function()
       require("tokyonight").setup({
         transparent = true,
-        style = "night",
       })
     end
   },
@@ -202,9 +201,9 @@ require('lazy').setup({
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
-    config = function ()
+    config = function()
       require("catppuccin").setup({
-        flavour = "mocha",
+        flavour = "macchiato",
         transparent_background = true,
         no_underline = true,
         styles = {
@@ -212,7 +211,25 @@ require('lazy').setup({
         },
         color_overrides = {
           all = {
-            mauve = "#ee8568"
+            -- mauve = "#f25544"
+          }
+        }
+      })
+    end
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      require('kanagawa').setup({
+        transparent = true,
+        functionStyle = { bold = true },
+        colors = {
+          theme = {
+            all = {
+              ui = {
+                bg_gutter = "none"
+              }
+            }
           }
         }
       })
@@ -359,7 +376,7 @@ require('lazy').setup({
     config = function()
       require("virt-column").setup({
         char = ".",
-        virtcolumn = "+1,120"
+        virtcolumn = "+1,100"
       })
     end
   },

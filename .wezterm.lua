@@ -9,6 +9,7 @@ config.line_height = 1.3
 config.freetype_load_target = 'HorizontalLcd'
 
 -- Tabbar
+config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
 	font = wezterm.font { family = 'Roboto', weight = 'Regular' },
 	active_titlebar_bg = '#211f1f',

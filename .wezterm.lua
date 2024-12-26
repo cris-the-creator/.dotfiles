@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 
 --Font
 config.font = wezterm.font_with_fallback { 'Dank Mono', 'VictorMono NFM', 'Fira Code' }
-config.font_size = 16
+config.font_size = 18
 config.line_height = 1.3
 config.freetype_load_target = 'HorizontalLcd'
 
@@ -23,9 +23,9 @@ config.colors = {
 
 -- Window
 config.window_decorations = 'RESIZE'
-config.window_background_opacity = 0.95
-config.color_scheme = 'Catppuccin Mocha'
-config.win32_system_backdrop = 'Acrylic'
+config.window_background_opacity = 0.98
+--config.color_scheme = 'Catppuccin Mocha'
+--config.win32_system_backdrop = 'Acrylic'
 
 -- Hotkeys
 config.keys = {

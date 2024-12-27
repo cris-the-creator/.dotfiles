@@ -1,9 +1,26 @@
 local wezterm = require 'wezterm'
-
 local config = wezterm.config_builder()
 
 --Font
-config.font = wezterm.font_with_fallback { 'Dank Mono', 'VictorMono NFM', 'Fira Code' }
+config.font = wezterm.font_with_fallback { 'JetBrains Mono', 'VictorMono NFM', 'Fira Code' }
+config.font_rules = {
+	{
+		intensity = 'Normal',
+		italic = true,
+		font = wezterm.font { family = 'Dank Mono', style = 'Italic' }
+	},
+	{
+		intensity = 'Half',
+		italic = true,
+		font = wezterm.font { family = 'Dank Mono', weight = 'DemiBold', style = 'Italic' }
+	},
+	{
+		intensity = 'Bold',
+		italic = true,
+		font = wezterm.font { family = 'Dank Mono', weight = 'Bold', style = 'Italic' }
+	}
+}
+
 config.font_size = 18
 config.line_height = 1.3
 config.freetype_load_target = 'HorizontalLcd'
@@ -24,7 +41,7 @@ config.colors = {
 -- Window
 config.window_decorations = 'RESIZE'
 config.window_background_opacity = 0.98
---config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = 'Batman'
 --config.win32_system_backdrop = 'Acrylic'
 
 -- Hotkeys

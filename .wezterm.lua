@@ -3,25 +3,25 @@ local config = wezterm.config_builder()
 
 --Font
 config.font = wezterm.font_with_fallback { 'JetBrains Mono', 'VictorMono NFM', 'Fira Code' }
-config.font_rules = {
-	{
-		intensity = 'Normal',
-		italic = true,
-		font = wezterm.font { family = 'Dank Mono', style = 'Italic' }
-	},
-	{
-		intensity = 'Half',
-		italic = true,
-		font = wezterm.font { family = 'Dank Mono', weight = 'DemiBold', style = 'Italic' }
-	},
-	{
-		intensity = 'Bold',
-		italic = true,
-		font = wezterm.font { family = 'Dank Mono', weight = 'Bold', style = 'Italic' }
-	}
-}
+-- config.font_rules = {
+-- 	{
+-- 		intensity = 'Normal',
+-- 		italic = true,
+-- 		font = wezterm.font { family = 'Dank Mono', style = 'Italic' }
+-- 	},
+-- 	{
+-- 		intensity = 'Half',
+-- 		italic = true,
+-- 		font = wezterm.font { family = 'Dank Mono', weight = 'DemiBold', style = 'Italic' }
+-- 	},
+-- 	{
+-- 		intensity = 'Bold',
+-- 		italic = true,
+-- 		font = wezterm.font { family = 'Dank Mono', weight = 'Bold', style = 'Italic' }
+-- 	}
+-- }
 
-config.font_size = 18
+config.font_size = 20
 config.line_height = 1.3
 config.freetype_load_target = 'HorizontalLcd'
 

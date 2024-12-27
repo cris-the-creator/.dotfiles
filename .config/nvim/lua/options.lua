@@ -1,5 +1,6 @@
 -- Set colorscheme
-vim.cmd.colorscheme "kanagawa-dragon"
+-- vim.cmd.colorscheme "catppuccin-mocha"
+vim.cmd.colorscheme "tokyonight-storm"
 
 -- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
@@ -10,8 +11,8 @@ vim.o.hlsearch = true
 vim.wo.number = true
 vim.o.relativenumber = true
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 
 -- Disable mouse mode
 vim.o.mouse = 'a'

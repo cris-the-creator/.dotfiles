@@ -121,9 +121,6 @@ require('lspconfig').intelephense.setup {
       environment = {
         includePaths = {
           'vendor',
-          '/home/cris/dev/local/repos/dev',
-          '/home/cris/dev/local/repos/framework',
-          '/home/cris/dev/local/repos/hub',
         }
       }
     }

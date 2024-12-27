@@ -3,7 +3,7 @@ require('lualine').setup {
     icons_enabled = true,
     component_separators = '|',
     section_separators = '',
-    theme = 'kanagawa',
+    theme = 'tokyonight',
   },
   sections = {
     lualine_a = {

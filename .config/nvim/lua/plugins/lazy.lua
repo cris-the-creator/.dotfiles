@@ -159,6 +159,7 @@ require('lazy').setup({
     end
   },
   -- COLORSCHEMES
+  { "rktjmp/lush.nvim" },
   {
     "folke/tokyonight.nvim",
     lazy = false,

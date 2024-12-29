@@ -1,6 +1,6 @@
 -- Set colorscheme
--- vim.cmd.colorscheme "catppuccin-mocha"
-vim.cmd.colorscheme "tokyonight-storm"
+vim.cmd.colorscheme "catppuccin-mocha"
+-- vim.cmd.colorscheme "tokyonight-storm"
 
 -- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
@@ -41,10 +41,10 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.conceallevel = 2
 
 -- Lua line bottom margin
-vim.opt.cmdheight = 320
+vim.opt.cmdheight = 0
 
 -- Bottom padding
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 15
 
 vim.filetype.add({
   pattern = {

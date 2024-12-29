@@ -427,5 +427,10 @@ require('lazy').setup({
         },
       })
     end
+  },
+  {
+    'Aasim-A/scrollEOF.nvim',
+    event = { 'CursorMoved', 'WinScrolled' },
+    opts = {},
   }
 })

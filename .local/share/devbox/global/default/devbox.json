@@ -6,7 +6,9 @@
     "tmux@latest",
     "fzf@latest",
     "starship@latest",
-    "lazygit@latest"
+    "lazygit@latest",
+    "go@latest",
+    "neovim@latest",
   ],
   "shell": {
     "init_hook": [

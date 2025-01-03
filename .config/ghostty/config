@@ -1,0 +1,9 @@
+font-size = 20
+theme = Builtin Pastel Dark
+background-opacity = 0.98
+window-padding-x = 0, 0
+window-theme = dark
+mouse-hide-while-typing = true
+window-decoration = false
+
+keybind = ctrl+shift+w=toggle_window_decorations

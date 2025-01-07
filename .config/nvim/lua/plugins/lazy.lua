@@ -336,7 +336,11 @@ require('lazy').setup({
     config = function()
       require('neotest').setup({
         adapters = {
-          require('neotest-phpunit')({})
+          require('neotest-phpunit')({
+            phpunit_cmd = function ()
+              return "./vendor/bin/phpunit"
+            end
+          })
         },
         diagnostic = {
           enabled = true
@@ -432,5 +436,14 @@ require('lazy').setup({
     'Aasim-A/scrollEOF.nvim',
     event = { 'CursorMoved', 'WinScrolled' },
     opts = {},
+  },
+  {
+    "andythigpen/nvim-coverage",
+    version = "*",
+    config = function()
+      require("coverage").setup({
+        auto_reload = true,
+      })
+    end,
   }
 })

@@ -1,1 +1,0 @@
-[{"url": "jdbc:redis://mewicore:5QC4eRrbCa8X7x7@localhost:6379", "name": "redis"}, {"url": "mysql://root:root@127.0.0.1:33060", "name": "mewi"}]

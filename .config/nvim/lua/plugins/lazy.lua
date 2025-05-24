@@ -21,15 +21,6 @@ require('lazy').setup({
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" }
   },
-  {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
-      "nvim-telescope/telescope.nvim", -- optional
-    },
-    config = true
-  },
   'onsails/lspkind.nvim',
   {
     "iamcco/markdown-preview.nvim",
@@ -37,22 +28,7 @@ require('lazy').setup({
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
-  "preservim/vim-pencil",
-  {
-    "sourcegraph/sg.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
-  {
-    "epwalsh/obsidian.nvim",
-    version = "*", -- recommended, use latest release instead of latest commit
-    lazy = true,
-    ft = "markdown",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
   'folke/zen-mode.nvim',
-  'tpope/vim-obsession',
   'f-person/git-blame.nvim',
   -- Database
   'kristijanhusak/vim-dadbod-ui',
@@ -69,24 +45,7 @@ require('lazy').setup({
     end,
   },
   'ThePrimeagen/git-worktree.nvim',
-  "tpope/vim-surround",
   'xiyaowong/nvim-transparent',
-  {
-    'numToStr/FTerm.nvim',
-    config = function()
-      local map = vim.api.nvim_set_keymap
-      local opts = { noremap = true, silent = true }
-      require 'FTerm'.setup({
-        blend = 5,
-        dimensions = {
-          height = 0.90,
-          width = 0.90,
-          x = 0.5,
-          y = 0.5
-        }
-      })
-    end
-  },
   {
     'rmagatti/goto-preview',
     config = function()
@@ -160,6 +119,16 @@ require('lazy').setup({
   },
   -- COLORSCHEMES
   { "rktjmp/lush.nvim" },
+  {
+    "zenbones-theme/zenbones.nvim",
+    dependencies = "rktjmp/lush.nvim",
+    lazy = true,
+    priority = 100,
+    config = function()
+      -- vim.g.zenbones_darken_comments = 45
+      vim.g.zenbones_transparent_background = true
+    end
+  },
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -238,10 +207,6 @@ require('lazy').setup({
   },
   'ray-x/go.nvim',
   'ray-x/guihua.lua',
-  {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-  },
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -295,7 +260,7 @@ require('lazy').setup({
   { 'leoluz/nvim-dap-go' },
   -- Git related plugins
   'tpope/vim-fugitive',
-  'lewis6991/gitsigns.nvim',
+  -- 'lewis6991/gitsigns.nvim',
   { 'nvim-lualine/lualine.nvim' },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
@@ -337,7 +302,7 @@ require('lazy').setup({
       require('neotest').setup({
         adapters = {
           require('neotest-phpunit')({
-            phpunit_cmd = function ()
+            phpunit_cmd = function()
               return "./vendor/bin/phpunit"
             end
           })
@@ -427,8 +392,13 @@ require('lazy').setup({
     config = function()
       require("conform").setup({
         formatters_by_ft = {
+          lua = { "stylua" },
           blade = { "blade-formatter" }
         },
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_fallback = true,
+        }
       })
     end
   },
@@ -445,5 +415,68 @@ require('lazy').setup({
         auto_reload = true,
       })
     end,
-  }
+  },
+  {
+    "greggh/claude-code.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("claude-code").setup()
+    end
+  },
+  {
+    "S1M0N38/love2d.nvim",
+    cmd = "LoveRun",
+    opts = {},
+    keys = {
+      { "<leader>v",  ft = "lua",          desc = "LÖVE" },
+      { "<leader>vv", "<cmd>LoveRun<cr>",  ft = "lua",   desc = "Run LÖVE" },
+      { "<leader>vs", "<cmd>LoveStop<cr>", ft = "lua",   desc = "Stop LÖVE" },
+    },
+  },
+  {
+    "folke/neodev.nvim",
+    opts = {
+      library = {
+        plugins = { "love2d.nvim" },
+        types = true,
+      },
+    },
+  },
+  {
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    dependencies = { 'williamboman/mason.nvim' },
+    config = function()
+      require('mason-tool-installer').setup({
+        ensure_installed = {
+          'stylua',   -- Lua formatter
+          'luacheck', 
+        },
+      })
+    end,
+  },
+  {
+  "folke/persistence.nvim",
+  event = "BufReadPre",
+  opts = {},
+}, -- Better session management
+
+{
+  "echasnovski/mini.pairs",
+  event = "VeryLazy",
+  opts = {},
+}, -- Lighter alternative to nvim-autopairs
+
+{
+  "kevinhwang91/nvim-ufo",
+  dependencies = "kevinhwang91/promise-async",
+  config = function()
+    vim.o.foldcolumn = '1'
+    vim.o.foldlevel = 99
+    vim.o.foldlevelstart = 99
+    vim.o.foldenable = true
+    require('ufo').setup()
+  end,
+}, -- Better folding
 })

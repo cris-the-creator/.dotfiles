@@ -8,16 +8,31 @@ require('telescope').setup {
   defaults = {
     layout_strategy = "horizontal",
     layout_config = {
-      horizontal = { width = 0.7 },
+      horizontal = { 
+        width = 0.9,    -- Use more screen space
+        height = 0.8,
+        preview_width = 0.6,
+      },
+    },
+    -- Add these for better performance
+    file_ignore_patterns = {
+      "node_modules",
+      ".git/",
+      "dist/",
+      "build/",
     },
     pickers = {
       find_files = {
+        hidden = true,
+        find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
         theme = "dropdown",
       },
       live_grep= {
         theme = "dropdown",
       }
     },
+    -- Better sorting
+    sorting_strategy = "ascending",
     mappings = {
       i = {
         ['<C-u>'] = false,
@@ -25,6 +40,8 @@ require('telescope').setup {
         ['<C-l>'] = actions.smart_send_to_qflist + actions.open_qflist,
         ['<C-j>'] = actions.move_selection_next,
         ['<C-k>'] = actions.move_selection_previous,
+        ['<C-c>'] = actions.close,  -- Easy close
+        ['<ESC>'] = actions.close,  -- Alternative close
       },
     },
   },

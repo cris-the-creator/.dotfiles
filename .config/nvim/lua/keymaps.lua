@@ -1,53 +1,44 @@
--- Twilight & Zen
-vim.api.nvim_set_keymap("n", "tw", ":Twilight<enter>", { noremap = false })
-vim.api.nvim_set_keymap("n", "zm", ":ZenMode<enter>", { noremap = false })
-vim.api.nvim_set_keymap("n", "tl", ":bnext<enter>", { noremap = false })
-vim.api.nvim_set_keymap("n", "td", ":bdelete<enter>", { noremap = false })
--- Files
-vim.api.nvim_set_keymap("n", "<C-q>", ":q!<enter>", { noremap = false })
-vim.api.nvim_set_keymap("n", "<C-s>", ":w!<enter>", { noremap = false })
-vim.api.nvim_set_keymap("n", "E", "$", { noremap = false })
-vim.api.nvim_set_keymap("n", "B", "^", { noremap = false })
-vim.api.nvim_set_keymap("n", "TT", ":TransparentToggle<CR>", { noremap = true })
--- Split (W)
-vim.keymap.set('n', '<leader>wv', '<cmd>vsplit<cr>', { desc = 'Vertical split' })
-vim.keymap.set('n', '<leader>wh', '<cmd>split<cr>', { desc = 'Vertical split' })
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window', noremap = true })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window', noremap = true })
--- Noice (NN)
-vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
--- Oil
-vim.keymap.set("n", "<leader><leader>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
--- Flash (S)
-vim.keymap.set("n", "s", function() require("flash").jump() end, { silent = true, noremap = true })
--- TODOs (T)
-vim.api.nvim_set_keymap("n", "<leader>t", ":TodoTelescope<CR>", { noremap = true })
--- Tests (N)
-vim.keymap.set('n', '<leader>nr', ':lua require("neotest").run.run()<CR>', { desc = 'Run unit tests' })
-vim.keymap.set('n', '<leader>ns', ':lua require("neotest").run.run({suite=true})<CR>', { desc = 'Run unit tests' })
-vim.keymap.set('n', '<leader>nc', ':lua require("neotest").run.stop()<CR>', { desc = 'Stop unit tests' })
-vim.keymap.set('n', '<leader>no', ':lua require("neotest").output.open()<CR>', { desc = 'Open test output' })
-vim.keymap.set('n', '<leader>nt', ':lua require("neotest").summary.toggle()<CR>', { desc = 'Toggle summary' })
--- DB (DD)
-vim.keymap.set('n', '<leader>dd', ':DBUI<CR>', { desc = 'Toggle summary' })
--- Trouble (X)
-vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
--- Quickfix List (Q)
-vim.keymap.set("n", "<leader>qq", "<cmd>copen<cr>")
-vim.keymap.set("n", "<leader>qn", "<cmd>cnext<cr>")
-vim.keymap.set("n", "<leader>qp", "<cmd>cprev<cr>")
--- Sratch Files
-vim.keymap.set("n", "<M-C-n>", "<cmd>Scratch<cr>")
-vim.keymap.set("n", "<M-C-o>", "<cmd>ScratchOpen<cr>")
--- Misc
-vim.keymap.set("n", "<leader>ee", "<cmd>GoIfErr<cr>", { silent = true, noremap = true })
-vim.keymap.set('n', '<Esc>', "<cmd>set nohlsearch<CR>")
-vim.api.nvim_set_keymap('n', '<C-f>', "<cmd>Format<CR>", { noremap = false })
-vim.api.nvim_set_keymap('n', '<C-b>', "<cmd>e#<CR>", { noremap = false })
+local map = vim.keymap.set
+local opts = {noremap = true, silent = true}
+
+
+-- File operations
+map('n', '<C-s>', '<cmd>w<CR>', { desc = 'Save file' })
+map('n', '<C-q>', '<cmd>confirm qa<CR>', { desc = 'Quit all with confirmation' })
+
+-- Better navigation  
+map('n', 'E', '$', { desc = 'End of line' })
+map('n', 'B', '^', { desc = 'Beginning of line' })
+
+
+-- Window management
+map('n', '<leader>wv', '<cmd>vsplit<CR>', { desc = 'Vertical split' })
+map('n', '<leader>wh', '<cmd>split<CR>', { desc = 'Horizontal split' })
+map('n', '<C-h>', '<C-w><C-h>', { desc = 'Window left' })
+map('n', '<C-l>', '<C-w><C-l>', { desc = 'Window right' })
+map('n', '<C-j>', '<C-w><C-j>', { desc = 'Window down' })
+map('n', '<C-k>', '<C-w><C-k>', { desc = 'Window up' })
+
+-- Clear search highlighting
+map('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
+
+-- Diagnostic navigation (fix the conflict)
+map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
+map('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+map('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
+map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Diagnostic list' })
+
+
+-- Plugin keymaps
+map('n', '<leader><leader>', '<cmd>Oil<CR>', { desc = 'File explorer' })
+map('n', 's', function() require("flash").jump() end, { desc = 'Flash jump' })
+map('n', 'zm', '<cmd>ZenMode<CR>', { desc = 'Zen mode' })
+map('n', 'tw', '<cmd>Twilight<CR>', { desc = 'Twilight' })
+map('n', 'TT', '<cmd>TransparentToggle<CR>', { desc = 'Toggle transparency' })
+
+-- Formatting
+map('n', '<leader>f', '<cmd>Format<CR>', { desc = 'Format buffer' })
+
+-- Quick access
+map('n', '<leader>t', '<cmd>TodoTelescope<CR>', { desc = 'Todo list' })
+map('n', '<leader>dd', '<cmd>DBUI<CR>', { desc = 'Database UI' })

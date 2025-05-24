@@ -56,11 +56,18 @@ end
 require('mason').setup()
 
 -- Enable the following language servers
-local servers = { 'lua_ls', 'clangd', 'pyright', 'ts_ls', 'gopls', 'intelephense', 'html', 'ols', 'bashls' }
+local servers = { 'lua_ls', 'clangd', 'csharp_ls', 'ts_ls', 'gopls', 'intelephense', 'html', 'ols', 'elixirls' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {
   ensure_installed = servers,
+  automatic_installation = true,
+}
+
+require('mason-tool-installer').setup {
+  ensurre_installed = {
+    'stylua'
+  }
 }
 
 -- nvim-cmp supports additional completion capabilities
@@ -97,6 +104,7 @@ require('lspconfig').lua_ls.setup {
       },
       diagnostics = {
         globals = { 'vim', 'love' },
+        disable = { 'duplicate-set-field' },
       },
       workspace = {
         library = {
@@ -106,6 +114,9 @@ require('lspconfig').lua_ls.setup {
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = { enable = false },
+      format = {
+        enable = false, -- Stylua is in use
+      }
     },
   },
 }
@@ -126,6 +137,14 @@ require('lspconfig').intelephense.setup {
     }
   }
 }
+
+
+require('lspconfig').elixirls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "C:/Users/cris/AppData/Local/nvim-data/mason/bin/elixir-ls.cmd" },
+}
+
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -173,13 +192,3 @@ cmp.setup {
     { name = "neorg" },
   },
 }
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'sh',
-  callback = function()
-    vim.lsp.start({
-      name = 'bash-language-server',
-      cmd = { 'bash-language-server', 'start' },
-    })
-  end,
-})

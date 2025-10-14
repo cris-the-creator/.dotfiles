@@ -1,15 +1,14 @@
 local map = vim.keymap.set
-local opts = {noremap = true, silent = true}
-
+local opts = { noremap = true, silent = true }
 
 -- File operations
 map('n', '<C-s>', '<cmd>w<CR>', { desc = 'Save file' })
 map('n', '<C-q>', '<cmd>confirm qa<CR>', { desc = 'Quit all with confirmation' })
+map('n', '<C-b>', ':b#<CR>', { desc = 'Go to last file' })
 
--- Better navigation  
+-- Better navigation
 map('n', 'E', '$', { desc = 'End of line' })
 map('n', 'B', '^', { desc = 'Beginning of line' })
-
 
 -- Window management
 map('n', '<leader>wv', '<cmd>vsplit<CR>', { desc = 'Vertical split' })
@@ -28,17 +27,20 @@ map('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
 map('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Diagnostic list' })
 
-
 -- Plugin keymaps
 map('n', '<leader><leader>', '<cmd>Oil<CR>', { desc = 'File explorer' })
-map('n', 's', function() require("flash").jump() end, { desc = 'Flash jump' })
-map('n', 'zm', '<cmd>ZenMode<CR>', { desc = 'Zen mode' })
-map('n', 'tw', '<cmd>Twilight<CR>', { desc = 'Twilight' })
+map('n', 's', function()
+  require('flash').jump()
+end, { desc = 'Flash jump' })
+
 map('n', 'TT', '<cmd>TransparentToggle<CR>', { desc = 'Toggle transparency' })
 
 -- Formatting
 map('n', '<leader>f', '<cmd>Format<CR>', { desc = 'Format buffer' })
 
 -- Quick access
-map('n', '<leader>t', '<cmd>TodoTelescope<CR>', { desc = 'Todo list' })
 map('n', '<leader>dd', '<cmd>DBUI<CR>', { desc = 'Database UI' })
+
+-- C/C++ header back & forth
+map('n', '<leader>aa', '<cmd>FSHere<CR>', { desc = 'Alternate between .cpp and .h' })
+map('n', '<leader>av', '<cmd>FSSplitRight<CR>', { desc = 'Split vertically and alternate' })

@@ -1,25 +1,25 @@
-require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    component_separators = '|',
-    section_separators = '',
-    -- theme = 'zenbones',
-  },
-  sections = {
-    lualine_a = {
-      {
-        'filename',
-        path = 3,
-        shorting_target = 40,
-      }
-    },
-    lualine_b = {},
-    lualine_c = {
-      {
-        'navic',
-        color_correction = nil,
-        navic_opts = nil,
-      }
-    }
-  },
+return {
+  -- options = {
+  --   icons_enabled = true,
+  --   component_separators = '|',
+  --   section_separators = '',
+  --   theme = 'tokyonight',
+  -- },
+  -- sections = {
+  --   lualine_a = {
+  --     {
+  --       'filename',
+  --       path = 3,
+  --       shorting_target = 40,
+  --     },
+  --   },
+  --   lualine_b = {},
+  --   lualine_c = {
+  --     {
+  --       'navic',
+  --       color_correction = nil,
+  --       navic_opts = nil,
+  --     },
+  --   },
+  -- },
 }

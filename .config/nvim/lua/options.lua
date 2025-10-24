@@ -76,4 +76,14 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+-- Makefiles require tabs
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'make',
+  callback = function()
+    vim.opt_local.expandtab = false
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+  end,
+})
+
 -- vim: ts=2 sts=2 sw=2 et

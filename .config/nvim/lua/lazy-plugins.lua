@@ -7,7 +7,7 @@ require('lazy').setup({
   require 'plugins.telescope',
   require 'plugins.lsp',
   require 'plugins.conform',
-  require 'plugins.blink-cmp',
+  require 'plugins.autocomplete',
   require 'plugins.colorscheme',
   require 'plugins.todo-comments',
   require 'plugins.mini',
@@ -25,6 +25,9 @@ require('lazy').setup({
   require 'plugins.virtcolumn', -- Custom max line styling
   require 'plugins.outline',
   require 'plugins.spectre',
+  require 'plugins.flash',
+  -- require 'plugins.dressing',
+  require 'plugins.copilot',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

@@ -29,9 +29,6 @@ map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Diagnostic list' })
 
 -- Plugin keymaps
 map('n', '<leader><leader>', '<cmd>Oil<CR>', { desc = 'File explorer' })
-map('n', 's', function()
-  require('flash').jump()
-end, { desc = 'Flash jump' })
 
 map('n', 'TT', '<cmd>TransparentToggle<CR>', { desc = 'Toggle transparency' })
 

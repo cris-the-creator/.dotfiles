@@ -4,7 +4,7 @@ return {
   config = function()
     require('virt-column').setup {
       char = '.',
-      virtcolumn = '+1,120',
+      virtcolumn = '+1,80',
     }
   end,
 }

@@ -189,19 +189,24 @@ return {
       }
 
       -- Ensure the servers and tools above are installed
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-        'intelephense',
-        'phpstan',
-        'phpcs',
-        'gopls',
-        'elixir-ls',
-        'typescript-language-server',
-        'vue-language-server',
-        'c3-lsp',
-      })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      -- Use Mason package names, not lspconfig server names
+      require('mason-tool-installer').setup {
+        ensure_installed = {
+          'stylua', -- Used to format Lua code
+          'intelephense',
+          'phpstan',
+          'phpcs',
+          'gopls',
+          'elixir-ls',
+          'typescript-language-server',
+          'vue-language-server',
+          'c3-lsp',
+          'lua-language-server',
+          'clangd',
+          'ols',
+          'zls',
+        },
+      }
 
       local lspconfig = require 'lspconfig'
       local configs = require 'lspconfig.configs'

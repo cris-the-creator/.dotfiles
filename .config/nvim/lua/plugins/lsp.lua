@@ -19,10 +19,6 @@ return {
           require('mason').setup()
         end,
       },
-      {
-        'mason-org/mason-lspconfig.nvim',
-        dependencies = { 'mason-org/mason.nvim' },
-      },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
@@ -221,28 +217,17 @@ return {
         }
       end
 
-      -- Setup mason-lspconfig with handlers to prevent automatic_enable from running
-      local mason_lspconfig = require 'mason-lspconfig'
-      mason_lspconfig.setup {
-        handlers = {
-          function(server_name)
-            -- Skip c3_lsp as we'll set it up manually
-            if server_name == 'c3_lsp' then
-              return
-            end
+      -- Setup LSP servers manually (bypasses mason-lspconfig automatic_enable issues)
+      for server_name, server_config in pairs(servers) do
+        local server = vim.tbl_deep_extend('force', {
+          capabilities = vim.deepcopy(capabilities),
+        }, server_config or {})
 
-            local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
-          end,
-        },
-      }
+        lspconfig[server_name].setup(server)
+      end
 
-      -- Setup c3_lsp manually after mason-lpsconfig
-      require('lspconfig').c3_lsp.setup {
+      -- Setup c3_lsp manually
+      lspconfig.c3_lsp.setup {
         capabilities = capabilities,
       }
     end,

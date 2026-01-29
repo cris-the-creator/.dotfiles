@@ -13,8 +13,16 @@ return {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
     dependencies = {
-      { 'mason-org/mason.nvim', opts = {} },
-      'mason-org/mason-lspconfig.nvim',
+      {
+        'mason-org/mason.nvim',
+        config = function()
+          require('mason').setup()
+        end,
+      },
+      {
+        'mason-org/mason-lspconfig.nvim',
+        dependencies = { 'mason-org/mason.nvim' },
+      },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
@@ -213,9 +221,9 @@ return {
         }
       end
 
-      require('mason-lspconfig').setup {
-        ensure_installed = {},
-        automatic_installation = false,
+      -- Setup mason-lspconfig with handlers to prevent automatic_enable from running
+      local mason_lspconfig = require 'mason-lspconfig'
+      mason_lspconfig.setup {
         handlers = {
           function(server_name)
             -- Skip c3_lsp as we'll set it up manually

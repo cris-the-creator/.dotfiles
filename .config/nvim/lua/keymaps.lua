@@ -32,6 +32,8 @@ map('n', '<leader><leader>', '<cmd>Oil<CR>', { desc = 'File explorer' })
 
 map('n', 'TT', '<cmd>TransparentToggle<CR>', { desc = 'Toggle transparency' })
 
+map('n', 'gb', '<cmd>BlameToggle virtual<CR>', { desc = 'Toggle transparency' })
+
 -- Formatting
 map('n', '<leader>f', '<cmd>Format<CR>', { desc = 'Format buffer' })
 

@@ -3,7 +3,7 @@ require('lazy').setup({
   'xiyaowong/nvim-transparent', -- Transparent nvim window
 
   require 'plugins.colorscheme',
-  require 'plugins.gitsigns',
+  require 'plugins.git',
   require 'plugins.telescope',
   require 'plugins.lsp',
   require 'plugins.conform',
